@@ -8,7 +8,7 @@ import { addContact, deleteContact, fetchContacts } from './redux/contactsOps';
 
 function App() {
   const dispatch = useDispatch();
-  const { items: contacts = [], loading, error } = useSelector((state) => state.contacts);
+  const { loading, error } = useSelector((state) => state.contacts);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -35,7 +35,7 @@ function App() {
       <h1>Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox />
-      <ContactList contacts={contacts} onDeleteContact={handleDeleteContact} />
+      <ContactList onDeleteContact={handleDeleteContact} />
     </div>
   );
 }
