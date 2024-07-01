@@ -29,11 +29,12 @@ const ContactList = () => {
     return <div>No contacts available</div>;
   }
 
+  console.log(contacts);
   return (
     <ul className={css.contactList}>
       {contacts.map(contact => (
         <li key={contact.id}>
-          {contact.name} - {contact.phone}
+          Name: {contact.name} <br /> Number: {contact.number} <br />
           <button onClick={() => handleDeleteContact(contact.id)}>Delete</button>
         </li>
       ))}
